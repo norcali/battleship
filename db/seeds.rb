@@ -5,3 +5,20 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+params = {}
+
+params[:game] = {}
+Game.create params[:game]
+
+params[:user] = {name: "Usuario", game: Game.first}
+params[:ai] = {name: "AI", game: Game.first}
+User.create params[:user]
+User.create params[:ai]
+
+params[:board] = {user: User.first}
+params[:board_ai] = {user: User.last}
+
+Board.create params[:board]
+Board.create params[:board_ai]
+
